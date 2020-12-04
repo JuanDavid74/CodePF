@@ -11,11 +11,9 @@ using namespace std;
 #include "SuperClass.cpp"
 #include <locale>
 
-
 int main(){
 int option;
 setlocale(LC_ALL, "");
-
 
 Person p1 ;
 Calc q1;
@@ -23,7 +21,6 @@ Politicons c1;
 Discrets d1;
 Ipoo v1;
 English e1;
-
 
 cout<<"-----Bienvenido-----"<<endl;
 p1.getName();
@@ -58,7 +55,9 @@ int puntaje = d1.sumaScore()+q1.sumaScore()+c1.sumaScore()+v1.sumaScore()+e1.sum
 p1.getScore(puntaje);
 
 cout<<"Acertaste: "<<contadorFin<<" preguntas."<<" Acumulaste: "<<puntaje<<" puntos"<<endl;
+
 //cout<<"Te ubicas en el puesto #1 del ranking."<<endl;
+
 p1.almacenarArch1();
 p1.leerArch1();
 p1.almacenarArch1L();
