@@ -9,8 +9,6 @@ using namespace std;
 #include "ipoo.cpp"
 #include "english.cpp"
 #include "SuperClass.cpp"
-#include <stdio.h>
-#include <wchar.h>
 #include <locale>
 
 
@@ -72,5 +70,3 @@ cout<<"--------------------------------"<<endl;
 return 0;
 }
 
-//Hola muchachos2
-//Pruebas
