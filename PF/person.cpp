@@ -7,6 +7,7 @@ using namespace std;
 #include <locale>
 #include <string.h>
 #include <cstdlib>
+#include <cstdio>
 
 Person:: Person(){}; 
 
@@ -38,7 +39,6 @@ fstream scoreT("scoreTem.txt", ios::in | ios::out | ios::app);
 		cout << "Error al escribir en el archivo" << endl;
 	}
 	scoreT.close();
-
 }
 
 int Person :: leerArch1(){
@@ -71,24 +71,26 @@ return 0;
 
 void Person :: almacenarArch1L(){
 
-fstream scoreL("score.txt", ios::in | ios::out | ios::app);
-	if (scoreL){
+remove("scoreTem.txt");
+	
+fstream scoreT("scoreTem.txt", ios::in | ios::out | ios::app);
+	if (scoreT){
 
-		for (int i = 0; i < nuevosScore.size(); i++){
- 
-			scoreL <<nuevosScore.at(i)+"\n" <<endl;
+		for(int i=nuevosScore.size()-1;i>=0;i--){
+			
+		scoreT <<nuevosScore.at(i) <<endl;
 		}
-	}else{
+
+		}else{
 		cout << "Error al escribir en el archivo" << endl;
 	}
-	scoreL.close();
+	scoreT.close();
 
 } 
 
 
 /*cout<<"\nNumeros de forma Descendente: "<<endl;
-	for(int i=nums.size()-1;i>=0;i--){
-		cout<<nums[i]<<" ";
+	
 	}*/
 
 //-----------------------------------------------------------------
