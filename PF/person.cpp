@@ -25,32 +25,6 @@ score.push_back(puntaje);
 return 0;
 }
 
-/*void Person :: almacenarArch(){
-
-for(int j =0; j < score.size(); j++){
-        int notes = score.at(j);
-        //cout<<"Nombre: "<<names.at(j)<<" Score: "<<score.at(j)<<"\n";
-
-        string toNote = to_string(notes);
-        string ultraS = "Nombre: "+names.at(j)+"   Score: "+toNote;
-        namesAndScore.push_back(ultraS);
-
-}
-
-fstream scoreT("score.txt", ios::in | ios::out | ios::app);
-	if (scoreT){
-
-		for (int i = 0; i < score.size(); i++){
-            
-			scoreT <<i+1<<". Nombre: "<<names.at(i)<<"  Score: "<<score.at(i) <<endl;
-		}
-	}else{
-		cout << "Error al escribir en el archivo" << endl;
-	}
-	scoreT.close();
-
-}*/
-
 void Person :: almacenarArch1(){
 
 fstream scoreT("scoreTem.txt", ios::in | ios::out | ios::app);
@@ -102,7 +76,7 @@ fstream scoreL("score.txt", ios::in | ios::out | ios::app);
 
 		for (int i = 0; i < nuevosScore.size(); i++){
  
-			scoreL <<nuevosScore.at(i) <<endl;
+			scoreL <<nuevosScore.at(i)+"\n" <<endl;
 		}
 	}else{
 		cout << "Error al escribir en el archivo" << endl;

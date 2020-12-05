@@ -1,0 +1,21 @@
+900
+900
+500700
+emento neutro del cuantificador dado: La disyuncion V
+ existe una interpretacion I para E tal que I(E) = Verdadero.
+.
+emento neutro del cuantificador dado: La disyuncion V
+sociado.
+ existe una interpretacion I para E tal que I(E) = Verdadero.
+.
+
+
+sta su minima expresion ((-p & -(p v -p)) v q) 
+emento neutro del cuantificador dado: La disyuncion V
+.
+
+
+sta su minima expresion ((-p & -(p v -p)) v q) 
+iccion demuestra -p -> false, esto graficamente se puede ver como : 
+emento neutro del cuantificador dado: La disyuncion V
+.
