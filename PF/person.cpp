@@ -52,6 +52,7 @@ ifstream scoreT("scoreTem.txt");
 			nuevosScore.push_back( atoi(linea.c_str()));
 			
 int aux,i;
+string aux2;
 	
 	for(i=0;i<nuevosScore.size();i++){
 		for(int j=0;j<nuevosScore.size()-1;j++){
@@ -59,6 +60,8 @@ int aux,i;
 				aux = nuevosScore[j];
 				nuevosScore[j] = nuevosScore[j+1];
 				nuevosScore[j+1] = aux;
+				
+
 			}
 		}
 	}
@@ -78,7 +81,7 @@ fstream scoreT("scoreTem.txt", ios::in | ios::out | ios::app);
 
 		for(int i=nuevosScore.size()-1;i>=0;i--){
 			
-		scoreT <<nuevosScore.at(i) <<endl;
+		scoreT << nuevosScore.at(i) <<endl;
 		}
 
 		}else{
@@ -93,4 +96,3 @@ fstream scoreT("scoreTem.txt", ios::in | ios::out | ios::app);
 	
 	}*/
 
-//-----------------------------------------------------------------

@@ -53,7 +53,6 @@ cout<<"--------------------------------"<<endl;
 int contadorFin = d1.contador()+q1.contador()+c1.contador()+v1.contador()+e1.contador(); 
 int puntaje = d1.sumaScore()+q1.sumaScore()+c1.sumaScore()+v1.sumaScore()+e1.sumaScore();
 p1.getScore(puntaje);
-
 cout<<"Acertaste: "<<contadorFin<<" preguntas."<<" Acumulaste: "<<puntaje<<" puntos"<<endl;
 
 //cout<<"Te ubicas en el puesto #1 del ranking."<<endl;
