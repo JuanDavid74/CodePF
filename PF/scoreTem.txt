@@ -1,0 +1,7 @@
+nueve 900
+ocho 800
+siete 700
+seis 600
+cinco 500
+dos 200
+juan 100

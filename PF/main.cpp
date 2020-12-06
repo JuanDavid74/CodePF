@@ -10,6 +10,7 @@ using namespace std;
 #include "english.cpp"
 #include "SuperClass.cpp"
 #include <locale>
+#include "person.h"
 
 int main(){
 int option;
@@ -22,8 +23,11 @@ Discrets d1;
 Ipoo v1;
 English e1;
 
-cout<<"-----Bienvenido-----"<<endl;
-p1.getName();
+cout<<"     ******  Bienvenido  ******        "<<endl;
+cout<<" Escribe un nickname para almacenar tu puntaje: "<<endl; 
+string name;
+cin >> name;  
+//p1.getName();
 int atempsT = 3;
 
 do{
@@ -52,14 +56,14 @@ cout<<"---- El juego ha finalizado. ----"<<endl;
 cout<<"--------------------------------"<<endl;
 int contadorFin = d1.contador()+q1.contador()+c1.contador()+v1.contador()+e1.contador(); 
 int puntaje = d1.sumaScore()+q1.sumaScore()+c1.sumaScore()+v1.sumaScore()+e1.sumaScore();
-p1.getScore(puntaje);
+//p1.getScore(puntaje);
 cout<<"Acertaste: "<<contadorFin<<" preguntas."<<" Acumulaste: "<<puntaje<<" puntos"<<endl;
 
 //cout<<"Te ubicas en el puesto #1 del ranking."<<endl;
 
-p1.almacenarArch1();
-p1.leerArch1();
-p1.almacenarArch1L();
+p1.almacenarArch1(name, puntaje);
+p1.OrganiceScore();
+p1.ranking(name,puntaje);
 
 cout<<"--------------------------------"<<endl;
 cout<<"---- Gracias por jugar. ----"<<endl;
