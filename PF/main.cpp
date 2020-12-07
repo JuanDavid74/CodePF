@@ -1,7 +1,7 @@
 
 #include <iostream>
-#include <vector>
 using namespace std;
+#include <vector>
 #include "person.cpp"
 #include "discrets.cpp"
 #include "politicons.cpp"
@@ -9,27 +9,24 @@ using namespace std;
 #include "ipoo.cpp"
 #include "english.cpp"
 #include "SuperClass.cpp"
-#include <locale>
-#include "person.h"
 
 int main(){
 int option;
-setlocale(LC_ALL, "");
-
 Person p1 ;
 Calc q1;
 Politicons c1;
 Discrets d1;
 Ipoo v1;
 English e1;
-
-cout<<"     ******  Bienvenido  ******        "<<endl;
-cout<<" Escribe un nickname para almacenar tu puntaje: "<<endl; 
 string name;
-cin >> name;  
-//p1.getName();
 int atempsT = 3;
-
+cout<<"-------------------------------------------------------------------------"<<endl;
+cout<<"*************************************************************************"<<endl;
+cout<<"***                     Bienvenido a la trivia J&C                    ***"<<endl;
+cout<<"*************************************************************************"<<endl;
+cout<<"***         Escribe un nickname para almacenar tu puntaje:            ***"<<endl; 
+cin>>name;
+cout<<"**************************************************************************"<<endl;
 do{
 int opcion = p1.chooseCat();
 if( opcion == 1 ){
@@ -48,27 +45,27 @@ atempsT -= e1.atempsitos();
 v1.whatPoints();
 atempsT -= v1.atempsitos();
 }else{
-cout<<"Ingrese un numero valido"<<endl;
+cout<<"**************************************************************************"<<endl;
+cout<<"**                       Ingrese un numero valido                      ***"<<endl;
+cout<<"*************************************************************************"<<endl;
 }
 }while(atempsT!=0);
-cout<<"--------------------------------"<<endl;
-cout<<"---- El juego ha finalizado. ----"<<endl;
-cout<<"--------------------------------"<<endl;
+cout<<"**************************************************************************"<<endl;
+cout<<"***                      El juego ha finalizado.                       ***"<<endl;
+cout<<"*************************************************************************"<<endl;
 int contadorFin = d1.contador()+q1.contador()+c1.contador()+v1.contador()+e1.contador(); 
 int puntaje = d1.sumaScore()+q1.sumaScore()+c1.sumaScore()+v1.sumaScore()+e1.sumaScore();
-//p1.getScore(puntaje);
-cout<<"Acertaste: "<<contadorFin<<" preguntas."<<" Acumulaste: "<<puntaje<<" puntos"<<endl;
 
-//cout<<"Te ubicas en el puesto #1 del ranking."<<endl;
+cout<<"** Acertaste: "<<contadorFin<<" preguntas."<<" Acumulaste: "<<puntaje<<" puntos **"<<endl;
 
 p1.almacenarArch1(name, puntaje);
 p1.OrganiceScore();
-p1.ranking(name,puntaje);
+cout<<"**************************************************************************"<<endl;
+p1.ranking(name, puntaje);
 
-cout<<"--------------------------------"<<endl;
-cout<<"---- Gracias por jugar. ----"<<endl;
-cout<<"--------------------------------"<<endl;
-
+cout<<"*************************************************************************"<<endl;
+cout<<"***                        Gracias por jugar.                         ***"<<endl;
+cout<<"*************************************************************************"<<endl;
 return 0;
 }
 

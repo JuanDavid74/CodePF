@@ -69,14 +69,6 @@ for(j = i; j > 0 & nuevosScore[j-1] < newS; j--){
     names[j] = newN;
 }
 
-/*for(int i = 0; i< names.size(); i++){
-    if(i==0){
-        remove("scoreTem.txt");
-    almacenarArch1(names.at(i), nuevosScore.at(i));
-}else{
-    almacenarArch1(names.at(i), nuevosScore.at(i));
-}*/
-
 for(int i =0; i < names.size(); i++){
 	charsito = names.at(i)+" "+to_string(nuevosScore.at(i));
     last.push_back(charsito);
@@ -85,16 +77,13 @@ for(int i =0; i < names.size(); i++){
 for(int i = 0; i< names.size(); i++){
     if(i==0){
         remove("scoreTem.txt");
-    	almacenarArch1(names.at(i), nuevosScore.at(i));
-
+    almacenarArch1(names.at(i), nuevosScore.at(i));
 }else{
-
-		almacenarArch1(names.at(i), nuevosScore.at(i));
-
-}
-
+    almacenarArch1(names.at(i), nuevosScore.at(i));
+    }
 }
 };
+
 
 void Person :: ranking(string name, int &score){
 
@@ -102,8 +91,8 @@ for(int i=0; i< names.size(); i++ ){
 
     if( name+" "+to_string(score) == last[i] ){
 
-        cout<<"Tu puesto es: "<<i+1<<". Nombre: "<<name<<" Score: "<<score<<endl;
-		i = names.size();
+        cout<<"Te ubicas en el puesto #"<<i+1<<" del ranking."<<endl;
+		i = names.size(); // C
         
     }else{
 		cout<<"";
@@ -116,50 +105,3 @@ for(int i=0; i< names.size(); i++ ){
 }
 
 };
-
-
-
-/*for(int i = 0; i< names.size(); i++){
-    if(i==0){
-        remove("scoreTem.txt");
-    almacenarArch1(names.at(i), nuevosScore.at(i));
-}else{
-    almacenarArch1(names.at(i), nuevosScore.at(i));
-}*/
-
-/*for(int i = 0; i< names.size(); i++){
-    if(i==0){
-        remove("scoreTem.txt");
-fstream scoreT("scoreTem.txt", ios::in | ios::out | ios::app);
-
-    if (scoreT){
-
-            scoreT <<name+" "+to_string(score)<<"\n";
-    }else{
-        cout << "Error al escribir en el archivo" << endl;
-    }
-    scoreT.close();
-}
-}else{
-
-    almacenarArch1(names.at(i),&nuevosScore.at(i)); 
-
-            vector <string> last; //global
-            string charsito = name+" "+to_string(score);
-            last.push_back(charsito);
-    }else{
-        cout << "Error al escribir en el archivo" << endl;
-    }
-    scoreT.close();
-}
-
- for(int i=0; i< names.size(); i++ ){
-
-    if( names+" "+to_string(score) == last[i] ){
-
-        cout<<"Tu puesto es: "<<i<<"nombre bla bla";
-
-    }else{
-
-        cout<<"Error";
-    }*/
