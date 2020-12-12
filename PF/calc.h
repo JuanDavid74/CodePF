@@ -95,7 +95,7 @@ class Calc :public superClass{
     string randomQues();
     int whatPoints();  
     void setMenu();    
-    int atempsitos();
+    //int atempsitos();
 
 };
 #endif     

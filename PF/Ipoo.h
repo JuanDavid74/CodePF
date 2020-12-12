@@ -92,7 +92,7 @@ class Ipoo:public superClass{
     ~Ipoo();
      string randomQues();
      int whatPoints();
-     int atempsitos();
+     //int atempsitos();
 
 }; 
 #endif

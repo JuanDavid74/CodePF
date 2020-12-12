@@ -93,7 +93,7 @@ class Politicons: public superClass{
    ~Politicons();
    string randomQues();
    int whatPoints();         
-   int atempsitos();
+   //int atempsitos();
 
 }; 
 #endif     

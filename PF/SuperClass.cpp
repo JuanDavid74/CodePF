@@ -26,3 +26,16 @@ int superClass :: contador(){
     return cont;
 }
 
+int superClass :: atempsitos(){
+
+    if (atemps == 0){
+        return 3;
+    }else if (atemps == 1){
+        return 2;
+    }else if (atemps == 2){
+        return 1;
+    }else if (atemps == 3){
+        return 0;
+    }
+    return 0;
+};

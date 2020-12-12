@@ -88,7 +88,7 @@ class English :public superClass{
     ~English();
      string randomQues();
      int whatPoints();
-   int atempsitos();
+   //int atempsitos();
 
 }; 
 

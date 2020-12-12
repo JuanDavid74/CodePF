@@ -17,7 +17,7 @@ class superClass{
         int contador();
         int sumaScore();
         int chooseCat();
-
+        int atempsitos();
 };
 #endif  
 

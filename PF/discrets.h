@@ -5,7 +5,7 @@
  
 #include "SuperClass.h"    
 
-class Discrets :public superClass{ 
+class Discrets : public superClass{ 
   private:
     
         vector<string> DiscretsQues = {
@@ -98,7 +98,7 @@ class Discrets :public superClass{
     ~Discrets();
     string randomQues();
     int whatPoints();
-    int atempsitos();
+    
 
 
 }; 
