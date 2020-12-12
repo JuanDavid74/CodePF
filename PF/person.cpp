@@ -4,117 +4,104 @@
 using namespace std;
 #include "person.h"
 #include <fstream>
-#include <locale>
-#include <string.h>
+#include <string>
 #include <cstdlib>
+#include <cstdio>
 
 Person:: Person(){}; 
 
 Person::~Person(){}; 
 
-string Person::getName(){
-
-cout<<"Escribe un nickname para almacenar tu puntaje: "<<endl; 
-getline(cin>> ws, name);              
-names.push_back(name);      
-return ""; 
-}
-
-double Person::getScore(int puntaje){         
-score.push_back(puntaje);       
-return 0;
-}
-
-/*void Person :: almacenarArch(){
-
-for(int j =0; j < score.size(); j++){
-        int notes = score.at(j);
-        //cout<<"Nombre: "<<names.at(j)<<" Score: "<<score.at(j)<<"\n";
-
-        string toNote = to_string(notes);
-        string ultraS = "Nombre: "+names.at(j)+"   Score: "+toNote;
-        namesAndScore.push_back(ultraS);
-
-}
-
-fstream scoreT("score.txt", ios::in | ios::out | ios::app);
-	if (scoreT){
-
-		for (int i = 0; i < score.size(); i++){
-            
-			scoreT <<i+1<<". Nombre: "<<names.at(i)<<"  Score: "<<score.at(i) <<endl;
-		}
-	}else{
-		cout << "Error al escribir en el archivo" << endl;
-	}
-	scoreT.close();
-
-}*/
-
-void Person :: almacenarArch1(){
+void Person :: almacenarArch1(string name, int &score){
 
 fstream scoreT("scoreTem.txt", ios::in | ios::out | ios::app);
-	if (scoreT){
 
-		for (int i = 0; i < score.size(); i++){
- 
-			scoreT <<score.at(i) <<endl;
-		}
-	}else{
-		cout << "Error al escribir en el archivo" << endl;
-	}
-	scoreT.close();
+    if (scoreT){
 
+            scoreT <<name+" "+to_string(score)<<"\n";
+    }else{
+        cout << "Error al escribir en el archivo" << endl;
+    }
+    scoreT.close();
 }
 
-int Person :: leerArch1(){
-ifstream scoreT("scoreTem.txt");
-	if (scoreT)
-	{
-		string linea;
-		while (getline(scoreT, linea))
-		{
+void Person:: OrganiceScore(){
+    ifstream scoreT("scoreTem.txt");
+if (scoreT){
+    string linea;
+    while(getline(scoreT,linea)){
+        string dato;
+        int num = 0;
 
-			nuevosScore.push_back( atoi(linea.c_str()));
-			
-int aux,i;
-	
-	for(i=0;i<nuevosScore.size();i++){
-		for(int j=0;j<nuevosScore.size()-1;j++){
-			if(nuevosScore[j] > nuevosScore[j+1]){
-				aux = nuevosScore[j];
-				nuevosScore[j] = nuevosScore[j+1];
-				nuevosScore[j+1] = aux;
-			}
-		}
-	}
-		}
-		scoreT.close();
-	}
-return 0;
+        for(int i = 0 ; i < linea.length(); i++){
+            if (linea[i] == ' '){
+                names.push_back(dato);
+                dato = "";
+            }
+
+                dato += linea[i];
+            if(i == linea.length()-1){
+                num = stoi(dato);
+                nuevosScore.push_back(num);
+                dato="";
+                num=0;
+            }
+
+        }
+    }
+}
+else{
+    cout << "Error al leer el archivo"<<endl;
+    }
+    scoreT.close();
+int i,j,newS;
+string newN;
+
+for(i= 1; i<names.size(); i++){
+    newS= nuevosScore[i];
+    newN= names[i];
+
+for(j = i; j > 0 & nuevosScore[j-1] < newS; j--){
+    nuevosScore[j]=nuevosScore[j-1];
+    names[j]=names[j-1];
+}
+    nuevosScore[j] = newS;
+    names[j] = newN;
 }
 
+for(int i =0; i < names.size(); i++){
+	charsito = names.at(i)+" "+to_string(nuevosScore.at(i));
+    last.push_back(charsito);
+}
 
-void Person :: almacenarArch1L(){
-
-fstream scoreL("score.txt", ios::in | ios::out | ios::app);
-	if (scoreL){
-
-		for (int i = 0; i < nuevosScore.size(); i++){
- 
-			scoreL <<nuevosScore.at(i) <<endl;
-		}
-	}else{
-		cout << "Error al escribir en el archivo" << endl;
-	}
-	scoreL.close();
-
-} 
+for(int i = 0; i< names.size(); i++){
+    if(i==0){
+        remove("scoreTem.txt");
+    almacenarArch1(names.at(i), nuevosScore.at(i));
+}else{
+    almacenarArch1(names.at(i), nuevosScore.at(i));
+    }
+}
+};
 
 
-/*cout<<"\nNumeros de forma Descendente: "<<endl;
-	for(int i=nums.size()-1;i>=0;i--){
-		cout<<nums[i]<<" ";
-	}*/
+void Person :: ranking(string name, int &score){
 
+for(int i=0; i< names.size(); i++ ){
 
+    if( name+" "+to_string(score) == last[i] ){
+
+        cout<<"Te ubicas en el puesto #"<<i+1<<" del ranking."<<endl;
+		i = names.size(); // C
+        
+    }else{
+		cout<<"";
+    }	
+ }
+
+for(int i=0; i< names.size(); i++ ){
+    
+    cout<<i+1<<"."<<names.at(i)<< " "<<nuevosScore.at(i)<<" puntos."<<endl;
+}
+
+};

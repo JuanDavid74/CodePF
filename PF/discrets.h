@@ -92,13 +92,14 @@ class Discrets :public superClass{
 
 
 
-  public:               
+  public: 
+                
     Discrets();
     ~Discrets();
-     string randomQues();
+    string randomQues();
     int whatPoints();
     int atempsitos();
-    string eliminar(vector <string> ques1, vector <string> ques2, vector <string> ques3 , vector <string> ques4, vector <string> ques5);
+
 
 }; 
 #endif     

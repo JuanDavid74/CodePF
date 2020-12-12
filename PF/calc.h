@@ -87,12 +87,14 @@ class Calc :public superClass{
         "Demuestra la existencia de un punto interior en un intervalo abierto",
         "Permite aproximar una funcion en torno a un punto interior a dicho intervalo, mediante un polinomio."//
       }; 
-  public:   
+
+
+  public:  
+    Calc();
+    ~Calc(); 
     string randomQues();
     int whatPoints();  
     void setMenu();    
-    Calc();
-    ~Calc();
     int atempsitos();
 
 };
