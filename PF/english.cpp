@@ -15,8 +15,7 @@ string English :: randomQues(){
 atemps= 3;
 int* pointer = &point; 
 if (*pointer == 100){
-cout<<"*************************************************************************"<<endl;
-cout<<"***                      Pregunta por 100 puntos.                     ***"<<endl;
+cout<<"Pregunta por 100 puntos."<<endl;
 srand( time( NULL ) );
 operacion = ques1[0+(rand()%(ques1.size()))];
 if(operacion ==  QuesEngl.at(0)){
@@ -53,8 +52,7 @@ if(ans2 != "c"){
 }
 }  
 }else if(*pointer == 200){
-cout<<"*************************************************************************"<<endl;
-cout<<"***                      Pregunta por 200 puntos.                     ***"<<endl;;
+cout<<"Pregunta por 200 puntos."<<endl;
 srand( time( NULL ) );
 operacion = ques2.at(0+(rand()%(ques2.size())));
 if(operacion ==  QuesEngl.at(2)){
@@ -89,8 +87,7 @@ if(ans2 != "c"){
 }
 }
 }else if(*pointer == 300){
-cout<<"*************************************************************************"<<endl;
-cout<<"***                      Pregunta por 300 puntos.                     ***"<<endl;
+cout<<"Pregunta por 300 puntos."<<endl;
 srand( time( NULL ) );
 operacion = ques3[0+(rand()%(ques3.size()))];
 if(operacion ==  QuesEngl.at(4)){
@@ -126,8 +123,7 @@ if(ans2 != "c"){
 }
 }
 }else if(*pointer == 400){
-cout<<"*************************************************************************"<<endl;
-cout<<"***                      Pregunta por 400 puntos.                     ***"<<endl;
+cout<<"Pregunta por 400 puntos."<<endl;
 srand( time( NULL ));
 operacion = ques4[0+(rand()%(ques4.size()))];
 if(operacion ==  QuesEngl.at(6)){
@@ -162,8 +158,6 @@ if(ans2 != "c"){
 }
 }
 }else if (*pointer == 500){
-cout<<"*************************************************************************"<<endl;
-cout<<"***                      Pregunta por 500 puntos.                     ***"<<endl;
 srand( time( NULL ) );
 operacion = ques5[0+(rand()%(ques5.size()))];
 if(operacion ==  QuesEngl.at(8)){
@@ -218,18 +212,13 @@ int English :: atempsitos(){
 
 int English:: whatPoints(){
 
-    
-    cout<<"-------------------------------------------------------------------------"<<endl;
-    cout<<"                Selecciona el score (100/200/300/400/500).               "<<endl;
-    cout<<"-------------------------------------------------------------------------"<<endl; 
-    cout<<"|     100     |        200       |    300    |     400    |     500     |" <<endl;
-    cout<<"-------------------------------------------------------------------------"<<endl;
+    cout<<"Seleccione el score que desea obtener en su categoria (100/200/300/400/500): "<<endl;
     cin>>point;
     if(point == 100){
     
     if( ques1.size() == 0){
     cout<<"Segun las instrucciones, no puedes ingresar dos veces a los mismos puntos."<<endl;
-    cout<<"***                         Elija otra categoria.                      ***"<<endl;
+    cout<<"Elija otra categoria."<<endl;
     atemps += atemps;
 
     return 0;
@@ -249,7 +238,7 @@ int English:: whatPoints(){
 
     if( ques2.size() == 0){
     cout<<"Segun las instrucciones, no puedes ingresar dos veces a los mismos puntos."<<endl;
-    cout<<"***                         Elija otra categoria.                      ***"<<endl;
+    cout<<"Elija otra categoria."<<endl;
     atemps += atemps;
 
     return 0;
@@ -270,7 +259,7 @@ int English:: whatPoints(){
            
     if( ques3.size() == 0){
     cout<<"Segun las instrucciones, no puedes ingresar dos veces a los mismos puntos."<<endl;
-    cout<<"***                         Elija otra categoria.                      ***"<<endl;
+    cout<<"Elija otra categoria."<<endl;
     atemps += atemps;
 
     return 0;
@@ -290,7 +279,7 @@ int English:: whatPoints(){
            
     if( ques4.size() == 0){
     cout<<"Segun las instrucciones, no puedes ingresar dos veces a los mismos puntos."<<endl;
-    cout<<"***                         Elija otra categoria.                      ***"<<endl;
+    cout<<"Elija otra categoria."<<endl;
     atemps += atemps;
 
     return 0;
@@ -310,7 +299,7 @@ int English:: whatPoints(){
            
     if( ques5.size() == 0){
     cout<<"Segun las instrucciones, no puedes ingresar dos veces a los mismos puntos."<<endl;
-    cout<<"***                         Elija otra categoria.                      ***"<<endl;
+    cout<<"Elija otra categoria."<<endl;
     atemps += atemps;
 
     return 0;
